@@ -1,14 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router"
 import { SignUp } from "./pages/sign-up"
+import { AuthProvider } from "./context/auth-context"
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
-        <Routes>
-          <Route path="/signup" element={<SignUp />} />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route index element={<>Home</>} />
+            <Route path="/signup" element={<SignUp />} />
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </>
   )
