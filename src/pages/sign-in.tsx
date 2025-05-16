@@ -1,9 +1,9 @@
 import React from "react"
 import { useAuth } from "../context/auth-context"
-import { SignUpForm } from "../features/signup/components/sign-up-form"
 import { useNavigate } from "react-router"
+import { SignInForm } from "../features/signin/components/sign-in-form"
 
-export const SignUp = () => {
+export const SignIn = () => {
     const { user } = useAuth()
     const navigate = useNavigate()
 
@@ -15,7 +15,7 @@ export const SignUp = () => {
 
     return (
         <div className="flex items-center justify-center min-h-screen w-full">
-            <SignUpForm />
+            <SignInForm />
         </div>
     )
 }
