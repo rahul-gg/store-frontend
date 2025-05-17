@@ -4,13 +4,13 @@ import { useAuth } from '../context/auth-context'
 
 export const Home = () => {
     const navigate = useNavigate()
-    const { user } = useAuth()
+    const { user, loading } = useAuth()
 
     React.useEffect(() => {
-        if (!user) {
-            navigate('/signup')
+        if (!loading && !user) {
+            navigate('/signin')
         }
-    }, [user])
+    }, [user,loading])
 
     return (
         <div className="min-h-screen min-w-screen flex items-center justify-center">

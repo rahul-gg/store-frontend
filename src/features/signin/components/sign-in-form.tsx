@@ -49,7 +49,7 @@ export const SignInForm = () => {
                         <Field className='w-full text-white h-8 px-2 py-5 border border-[#2B2B2B] bg-inherit rounded-md' name="email" type="text" placeholder='' />
                         <p className='text-sm font-light text-red-500'><ErrorMessage name='email' /></p>
                     </div>
-                    <div className='flex-col gap-1'>
+                    <div className='flex-col flex gap-1'>
                         <label htmlFor="password" className='text-white text-lg'>Password</label>
                         <Field className='w-full text-white h-8 px-2 py-5 border border-[#2B2B2B] bg-inherit rounded-md' name="password" type="password" placeholder='' />
                         <p className='text-sm font-light text-red-500'><ErrorMessage name='password' /></p>

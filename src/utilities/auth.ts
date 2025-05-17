@@ -29,3 +29,13 @@ export const signIn = async (email: string, password: string): Promise<AuthRespo
         return error
     }
 }
+
+export const signOut = async () => {
+    try {
+        const { error } = await supabase.auth.signOut()
+        return error
+    } catch (error) {
+        console.log(error)
+        return error
+    }
+}
