@@ -1,20 +1,18 @@
-import React from 'react'
-import { useNavigate } from 'react-router'
-import { useAuth } from '../context/auth-context'
+// import React from 'react'
+import { Hero } from "../features/home/components/hero"
+import { CardList } from "../features/home/components/card-list"
+import { Outro } from "../features/home/components/outro"
+
 
 export const Home = () => {
-    const navigate = useNavigate()
-    const { user, loading } = useAuth()
-
-    React.useEffect(() => {
-        if (!loading && !user) {
-            navigate('/signin')
-        }
-    }, [user,loading])
 
     return (
-        <div className="min-h-screen min-w-screen flex items-center justify-center">
-            <p className="text-3xl">Home Page</p>
+        <div className="flex flex-col items-center gap-10">
+            <Hero />
+            <div>
+                <CardList />
+            </div>
+            <Outro />
         </div>
     )
 }

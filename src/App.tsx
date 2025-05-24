@@ -3,7 +3,7 @@ import { SignUp } from "./pages/sign-up"
 import { AuthProvider } from "./context/auth-context"
 import { SignIn } from "./pages/sign-in"
 import { Home } from "./pages/home"
-import { Layout } from "./pages/Layout"
+import { Layout } from "./pages/layout"
 
 function App() {
 
