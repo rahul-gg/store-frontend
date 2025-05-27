@@ -56,7 +56,7 @@ export const SignInForm = () => {
                     </div>
                 </div>
                 <div className='flex flex-col gap-5'>
-                    {error && <p className='text-red-500 text-lg text-center italic'>{error}</p>}
+                    {error && <p className='text-red-500 text-sm font-light text-center'>{error}</p>}
                     <Button label='Sign In' isLoading={loading} disabled={loading} />
                      <p className='text-white text-sm text-center'>Do not have an account? Go to <a href="/signup" className='text-blue-300'>sign up</a></p>
                 </div>

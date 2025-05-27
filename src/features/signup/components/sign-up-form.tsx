@@ -62,7 +62,7 @@ export const SignUpForm = () => {
                     </div>
                 </div>
                 <div className='flex flex-col gap-5'>
-                    {error && <p className='text-red-500 text-lg text-center italic'>{error}</p>}
+                    {error && <p className='text-red-500 text-sm text-center font-light'>{error}</p>}
                     <Button label='Sign Up' isLoading={loading} disabled={loading} />
                      <p className='text-white text-sm text-center'>Already have an account? Go to <a href="/signin" className='text-blue-300'>sign in</a></p>
                 </div>
