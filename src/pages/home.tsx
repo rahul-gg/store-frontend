@@ -8,7 +8,7 @@ export const Home = () => {
 
     return (
         <div className="flex flex-col items-center gap-10">
-            <Hero />
+            <Hero title="Buy.Sell.Thrive." subHeading="Discover deals on sneakers, streetwear, and more" buttonText="Start Shopping" redirectUrl="/categories"/>
             <div>
                 <CardList />
             </div>

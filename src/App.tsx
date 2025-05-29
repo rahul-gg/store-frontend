@@ -4,6 +4,7 @@ import { AuthProvider } from "./context/auth-context"
 import { SignIn } from "./pages/sign-in"
 import { Home } from "./pages/home"
 import { Layout } from "./pages/layout"
+import { Sell } from "./pages/sell"
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Layout />} >
               <Route index element={<Home />} />
+              <Route path='/sell' element={<Sell />} />
             </Route>
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" element={<SignIn />} />
