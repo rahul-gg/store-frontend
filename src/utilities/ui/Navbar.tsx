@@ -20,7 +20,7 @@ export const Navbar = (props: Props) => {
             console.log(error)
         }
     }
-console.log('nav')
+
     return (
         <nav className="h-10 w-full flex items-center justify-between px-3 py-8">
             {/* <img src={logo} alt="logo" className='h-8 w-20' /> */}
@@ -46,7 +46,7 @@ console.log('nav')
                         </div>
                     </div> :
                     <a href="/signin" className='font-light text-sm hover:bg-opacity-85 bg-black text-white px-2 py-1 rounded-md'>Sign In</a>
-                    }
+                }
             </div>
         </nav>
     )
