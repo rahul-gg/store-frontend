@@ -1,6 +1,7 @@
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 import { useState } from 'react';
+import uploadFile from '../../../services/bucket';
 
 const SNEAKER_SIZE = ['uk6', 'uk7', 'uk8', 'uk9', 'uk10', 'uk11', 'uk12']
 const CLOTHING_SIZE = ['s', 'm', 'l']
@@ -70,7 +71,7 @@ export const CreateListingForm = () => {
             price: undefined,
             origin: '',
             address: '',
-            image: null as File | null,
+            image: null as unknown as File,
         }}
             validationSchema={Yup.object({
                 sex: Yup.string().required('Required').oneOf(['men', 'women', 'unisex']),
@@ -110,8 +111,9 @@ export const CreateListingForm = () => {
                         return ['image/jpeg', 'image/png', 'image/webp'].includes(value.type);
                     })
             })}
-            onSubmit={(values) => {
+            onSubmit={async (values) => {
                 console.log(values)
+                await uploadFile(values.image, values.category)
             }}
         >{(props: any) => (
             <Form className='flex flex-col my-10 w-4/5 gap-16'>
@@ -214,7 +216,7 @@ export const CreateListingForm = () => {
                     </div>
                     {previewUrl && (
                         <div className='form-row flex gap-5'>
-                            <img src={previewUrl} alt="Preview" className='w-full h-fit object-cover'/>
+                            <img src={previewUrl} alt="Preview" className='w-full h-fit object-cover' />
                         </div>
                     )}
                 </div>
