@@ -12,4 +12,24 @@ const uploadFile = async (file: File, category: string) => {
     }
 }
 
+const downloadFile = async (fileName: string, category: string) => {
+    try {
+        const path = `${category}/${fileName}`
+        const response = await supabase.storage.from('images').download(path)
+        console.log(response)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getFileUrl = async (fileName: string, category: string) => {
+    try {
+        const path = `${category}/${fileName}`
+        const response = supabase.storage.from('images').getPublicUrl(path)
+        console.log(response)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 export default uploadFile
